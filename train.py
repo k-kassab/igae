@@ -23,7 +23,7 @@ def check_injection_data(dataset_train, dataset_injection, t_args) :
 
 
 if __name__ == '__main__' :
-    debug = True
+    debug = False
 
     REPO_PATH=os.path.dirname(os.path.realpath(__file__))
 
