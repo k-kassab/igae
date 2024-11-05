@@ -170,8 +170,9 @@ class Evaluator:
             raise ValueError("No experiment name found in config")
         self.repo_path = repo_path
 
-        sampled_idxs = random.sample(range(len(train_injection_dataset)), min(len(train_injection_dataset), self.config.eval.injection_dashboard.n_img))
-        self.train_injection_dataset_sampled = IdxSampledDataset(train_injection_dataset, sampled_idxs)
+        if train_injection_dataset:
+            sampled_idxs = random.sample(range(len(train_injection_dataset)), min(len(train_injection_dataset), self.config.eval.injection_dashboard.n_img))
+            self.train_injection_dataset_sampled = IdxSampledDataset(train_injection_dataset, sampled_idxs)
 
     @torch.no_grad()
     def compute_metrics(self, im1:torch.Tensor, im2:torch.Tensor, include_psnr=True, include_mse=False, include_lpips=False, include_ssim=False):

@@ -23,7 +23,7 @@ def check_injection_data(dataset_train, dataset_injection, t_args) :
 
 
 if __name__ == '__main__' :
-    debug = False
+    debug = True
 
     REPO_PATH=os.path.dirname(os.path.realpath(__file__))
 
@@ -38,7 +38,7 @@ if __name__ == '__main__' :
         print("/!!!!\ Debug mode /!!!!\ ")
         args = parser.parse_args([
             "--pretrain",
-            "--config", "debug_ostris.yaml",
+            "--config", "igae_debug.yaml",
         ])
     else:
         args = parser.parse_args()
@@ -74,7 +74,7 @@ if __name__ == '__main__' :
     accelerator = Accelerator(**accelerator_kwargs)
     
     # --- initialiasing data ---
-    train_scenes, multi_scene_trainset, train_injection_dataset, test_scenes, multi_scene_testset, test_injection_dataset, pose_sampler, num_scenes = init_datasets(config)
+    train_scenes, multi_scene_trainset, train_injection_dataset, test_scenes, multi_scene_testset, test_injection_dataset, pose_sampler, num_scenes = init_datasets(config, include_injection=t_args.injection.apply)
 
     # --- initialiasing models ---
     vae, latent_renderer, latent_nerfs = init_models(config, num_scenes)    

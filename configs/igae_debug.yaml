@@ -13,7 +13,7 @@ dataset:
     objaverse: [0, 2]
 
 injection_dataset: 
-  name: train/imagenet/square128
+  name: null
   max_img: 1000
   split_ratio: 0.9
 
@@ -27,7 +27,7 @@ train_args:
     batch_size: 12
 
   injection:
-    apply: True
+    apply: false
     batch_size: 3
     
     losses:
@@ -41,6 +41,8 @@ train_args:
     n_epochs: 2
 
 pretrain_args:
+  injection:
+    apply: false
   optim:
     n_epochs: 2
 

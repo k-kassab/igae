@@ -370,7 +370,7 @@ class Trainer:
 
         # dataloaders
         self.dataloader_consistency = self.get_consistency_dataloader(multi_scene_set)
-        self.dataloader_injection = self.get_injection_dataloader(injection_set)
+        self.dataloader_injection = self.get_injection_dataloader(injection_set) if t_args.injection.apply else None
 
         # optimizers and schedulers
         self.optimizers, self.schedulers = self.get_optimizers_schedulers()
@@ -391,7 +391,7 @@ class Trainer:
 
         # Prepare all modules
         self.prepare_modules()
-        self.iterator_injection = itertools.cycle(self.dataloader_injection)
+        self.iterator_injection = itertools.cycle(self.dataloader_injection) if t_args.injection.apply else None
 
         # logging
         self.meters = {
@@ -697,7 +697,7 @@ class Trainer:
         # I. Intial evaluation
         if self.t_args.logging.initial_eval and self.config.wandb.apply:
             if self.accelerator.is_main_process:
-                log_dict = self.eval(epoch=-1)
+                log_dict = self.eval(epoch=-1, injection_dashboard=self.t_args.injection.apply, injection_metrics=self.t_args.injection.apply)
                 log_dict['epoch'] = -1
                 wandb.log(log_dict)
             self.accelerator.wait_for_everyone()
@@ -748,9 +748,9 @@ class Trainer:
                         log_dict = self.eval(
                             epoch,
                             consistency_metrics=do_now(epoch, self.t_args.logging.metrics_every_epoch),
-                            injection_metrics=do_now(epoch, self.t_args.logging.injection_metrics_every_epoch),
+                            injection_metrics=do_now(epoch, self.t_args.logging.injection_metrics_every_epoch) and self.t_args.injection.apply,
                             consistency_dashboard=do_now(epoch, self.t_args.logging.consistency_dashboard_every_epoch),
-                            injection_dashboard=do_now(epoch, self.t_args.logging.injection_dashboard_every_epoch),
+                            injection_dashboard=do_now(epoch, self.t_args.logging.injection_dashboard_every_epoch) and self.t_args.injection.apply,
                             nerfs_video=do_now(epoch, self.t_args.logging.eval_video_every_epoch),
                         )
                         eval_epoch_end = time.time()
@@ -883,10 +883,14 @@ class Trainer:
             save_models(f"gvae_epoch_{epoch}.pt", save_models_args)
 
 
-def init_datasets(config) : 
+def init_datasets(config, include_injection=True): 
     data_reader = DataReader(config.dataset)
-    train_injection_dataset = ImageDataset(config.injection_dataset, split='train') 
-    test_injection_dataset = ImageDataset(config.injection_dataset, split='test')
+    if include_injection:
+        train_injection_dataset = ImageDataset(config.injection_dataset, split='train') 
+        test_injection_dataset = ImageDataset(config.injection_dataset, split='test')
+    else:
+        train_injection_dataset = None
+        test_injection_dataset = None
 
     pose_sampler = LazyPoseSampler(
         dataset_name=config.dataset.name,

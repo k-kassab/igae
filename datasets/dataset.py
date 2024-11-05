@@ -16,7 +16,8 @@ import itertools
 if "DATA_DIR" in os.environ:
     DATA_DIR = Path(os.environ["DATA_DIR"])
 else:
-    DATA_DIR = Path("enter/path/to/data/dir")
+    # DATA_DIR = Path("enter/path/to/data/dir")
+    DATA_DIR = Path("/home/k.kassab/igae-data")
 
 def frame_to_datapoint(frame):
     relative_path = frame['file_path']
