@@ -58,6 +58,11 @@ bash run.sh igae.yaml
 We visualize and evaluate our method using [wandb](https://wandb.ai/site). 
 You can get quickstarted [here](https://docs.wandb.ai/quickstart).
 
+## Notice
+This repository additionally implements components present in our other work "[Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes](https://scaled-ig.github.io)" that are not used for this paper. 
+This mainly includes the Micro-Macro Tri-Planes decomposition.
+Feel free to explore our other work if it piques your interest. 
+
 ## Citation
 
 If you find this research project useful, please consider citing our work:
