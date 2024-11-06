@@ -8,6 +8,8 @@
 # without an express license agreement from NVIDIA CORPORATION or
 # its affiliates is strictly prohibited.
 
+# This file has been modified to be used in the context of the IG-AE project.
+
 import math
 import numpy as np
 import torch

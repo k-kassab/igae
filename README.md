@@ -63,6 +63,12 @@ This repository additionally implements components present in our other work "[S
 This mainly includes the Micro-Macro Tri-Planes decomposition.
 Feel free to explore our other work if it piques your interest. 
 
+## A Note on License
+
+This code is open-source. We share most of it under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+However, we reuse code from [EG3D](https://github.com/NVlabs/eg3d) which is released under a more restrictive [license](ae/volume_rendering/LICENSE.txt) that requires redistribution under the same license or equivalent. 
+Hence, the corresponding parts of our code ([ray_marcher.py](ae/volume_rendering/ray_marcher.py), [ray_sampler.py](ae/volume_rendering/ray_sampler.py), [renderer.py](ae/volume_rendering/renderer.py), [triplane_renderer.py](ae/triplane_renderer.py) and [camera_utils.py](ae/camera_utils.py)) are open-sourced using the [original license](https://github.com/NVlabs/eg3d/blob/main/LICENSE.txt) of these works and not Apache. 
+
 ## Citation
 
 If you find this research project useful, please consider citing our work:
