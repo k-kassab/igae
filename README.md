@@ -7,67 +7,14 @@
 
 ![LatentScenes](assets/latent_scenes.gif)
 
-## Setup
-In this section we detail how prepare the environment for training IG-AE.
+# Paper implementation details
+Our paper utilizes two codebases:
+- The [first](./igae_training) is utilized to train an IG-AE.
+- The [second]() (TODO link) is a dedicated subrepo that extends [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) to support training various NeRF architectures in the latent space. It is utilized in our paper to train our NeRF models in the latent space of a standard AE as well as that of our IG-AE.
 
-### Environment 
-Our code has been tested on:
-- Linux (Debian)
-- Python 3.11.9
-- Pytorch 2.0.1
-- CUDA 11.8
-- `L4` and `A100` NVIDIA GPUs
+## License
 
-
-You can use Anaconda to create the environment:
-```
-conda create --name igae -y python=3.11.9
-conda activate igae
-```
-Then, you can install pytorch with Cuda 11.8 using the following command:
-```
-pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118 --upgrade
-```
-_You may have to adapt the cuda version according to your hardware, we recommend using CUDA >= 11.8_
-
-To install the remaining requirements, execute:
-```
-pip install -r requirements.txt
-```
-
-## Usage
-
-### Download data
-(coming soon)
-Download and untar the data (about 45 GB).
-
-### Define data directory
-You must specify the path to the igae-data by defining the environment variable DATA_DIR
-```
-export DATA_DIR=".../igae-data"
-```
-or by changing the variable ``DATA_DIR`` in datasets/dataset.py .
-
-### Train IG-AE
-To train IG-AE, run:
-```
-bash run.sh igae.yaml
-```
-
-## Visualization / evaluation
-We visualize and evaluate our method using [wandb](https://wandb.ai/site). 
-You can get quickstarted [here](https://docs.wandb.ai/quickstart).
-
-## Notice
-This repository additionally implements components present in our other work "[Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes](https://scaled-ig.github.io)" that are not used for this paper. 
-This mainly includes the Micro-Macro Tri-Planes decomposition.
-Feel free to explore our other work if it piques your interest. 
-
-## A Note on License
-
-This code is open-source. We share most of it under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
-However, we reuse code from [EG3D](https://github.com/NVlabs/eg3d) which is released under a more restrictive [license](ae/volume_rendering/LICENSE.txt) that requires redistribution under the same license or equivalent. 
-Hence, the corresponding parts of our code ([ray_marcher.py](ae/volume_rendering/ray_marcher.py), [ray_sampler.py](ae/volume_rendering/ray_sampler.py), [renderer.py](ae/volume_rendering/renderer.py), [triplane_renderer.py](ae/triplane_renderer.py) and [camera_utils.py](ae/camera_utils.py)) are open-sourced using the [original license](https://github.com/NVlabs/eg3d/blob/main/LICENSE.txt) of these works and not Apache. 
+Each codebase has its own license. For more information, please refer to each of the codebases.
 
 ## Citation
 
