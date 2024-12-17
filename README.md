@@ -10,7 +10,7 @@
 # Paper implementation details
 Our paper utilizes two codebases:
 - The [first](./igae_training) is utilized to train an IG-AE.
-- The [second]() (TODO link) is a dedicated subrepo that extends [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) to support training various NeRF architectures in the latent space. It is utilized in our paper to train our NeRF models in the latent space of a standard AE as well as that of our IG-AE.
+- The [second](./latent-nerfstudio) is a dedicated subrepo that extends [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) to support training various NeRF architectures in the latent space. It is utilized in our paper to train our NeRF models in the latent space of a standard AE as well as that of our IG-AE.
 
 ## License
 

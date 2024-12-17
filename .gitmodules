@@ -1,0 +1,3 @@
+[submodule "latent-nerfstudio"]
+	path = latent-nerfstudio
+	url = https://github.com/AntoineSchnepf/latent-nerfstudio.git
