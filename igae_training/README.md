@@ -70,10 +70,12 @@ Hence, the corresponding parts of our code ([ray_marcher.py](ae/volume_rendering
 
 If you find this research project useful, please consider citing our work:
 ```
-@article{ig-ae,
-      title={{Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder}}, 
-      author={Antoine Schnepf and Karim Kassab and Jean-Yves Franceschi and Laurent Caraffa and Flavian Vasile and Jeremie Mary and Andrew Comport and Valérie Gouet-Brunet},
-      journal={arXiv preprint arXiv:2410.22936},
-      year={2024}
+@inproceedings{
+      ig-ae,
+      title={Bringing Ne{RF}s to the Latent Space: Inverse Graphics Autoencoder},
+      author={Antoine Schnepf and Karim Kassab and Jean-Yves Franceschi and Laurent Caraffa and Flavian Vasile and Jeremie Mary and Andrew I. Comport and Valerie Gouet-Brunet},
+      booktitle={The Thirteenth International Conference on Learning Representations},
+      year={2025},
+      url={https://openreview.net/forum?id=LTDtjrv02Y}
 }
 ```
