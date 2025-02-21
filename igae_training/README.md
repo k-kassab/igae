@@ -35,8 +35,18 @@ pip install -r requirements.txt
 ## Usage
 
 ### Download data
-(coming soon)
-Download and untar the data (about 45 GB).
+The data to train IG-AE is available at our [Hugging Face repository](https://huggingface.co/datasets/k-kassab/igae-data/tree/main).
+
+To download the data, make sure you have [git lfs](https://git-lfs.com) installed:
+```
+      apt install git-lfs
+      git lfs install
+```
+and then clone our dataset repository, by running:
+```
+      git clone https://huggingface.co/datasets/k-kassab/igae-data
+```
+Note that the data should take around 45 GB of disk space.
 
 ### Define data directory
 You must specify the path to the igae-data by defining the environment variable DATA_DIR
