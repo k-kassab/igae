@@ -1,5 +1,5 @@
 # IGAE Training
-> Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet (* indicates equal contribution)<br>
+> Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport $^\dagger$, Valérie Gouet-Brunet $^\dagger$ (*$^\dagger$ indicate equal contributions)<br>
 | [Project Page](https://ig-ae.github.io) | [Full paper](https://openreview.net/forum?id=LTDtjrv02Y) | [Preprint](https://arxiv.org/abs/2410.22936) |<br>
 
 This section is dedicated to training an Inverse Graphics Autoencoder.
