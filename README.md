@@ -7,10 +7,17 @@
 
 ![LatentScenes](assets/latent_scenes.gif)
 
-# Paper implementation details
+## Paper implementation details
 Our paper utilizes two codebases:
 - The [first](./igae_training) is utilized to train an IG-AE.
 - The [second](./latent-nerfstudio) is a dedicated subrepo that extends [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) to support training various NeRF architectures in the latent space. It is utilized in our paper to train our NeRF models in the latent space of a standard AE as well as that of our IG-AE.
+
+## Clone this repository
+
+To clone this repository including its submodule, use:
+```
+git clone --recurse-submodules https://github.com/k-kassab/igae.git
+```
 
 ## License
 
