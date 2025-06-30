@@ -1,4 +1,5 @@
 # Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder
+### ICLR 2025
 **Official paper implementation**
 > Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport $^\dagger$, Valérie Gouet-Brunet $^\dagger$ (*$^\dagger$ indicate equal contributions)<br>
 | [Project Page](https://ig-ae.github.io) | [Full paper](https://openreview.net/forum?id=LTDtjrv02Y) | [Preprint](https://arxiv.org/abs/2410.22936) |<br>
