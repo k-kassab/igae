@@ -11,4 +11,4 @@ torch==2.0.1
 torchmetrics==1.4.0.post0
 torchvision==0.15.2
 tqdm==4.66.1
-wandb==0.16.0conda 
+wandb==0.16.0
